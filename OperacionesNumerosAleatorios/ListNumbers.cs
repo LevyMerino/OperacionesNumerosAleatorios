@@ -13,7 +13,7 @@ namespace OperacionesNumerosAleatorios
         private int _n;
         public string minor;
         public string higher;
-        public ListNumbers(int n)
+        internal ListNumbers(int n)
         {
             _numbers = new List<int>();
             _n = n;
@@ -21,7 +21,7 @@ namespace OperacionesNumerosAleatorios
             higher = string.Empty;
         }
 
-        public void RandomNumbers()
+        internal void RandomNumbers()
         {
             Random random = new();
 
@@ -32,25 +32,25 @@ namespace OperacionesNumerosAleatorios
             }
         }
 
-        public string getInput()
+        internal string getInput()
         {
             return String.Join(", ", _numbers);
         }
 
 
-        public string getAverage()
+        internal string getAverage()
         {
 
             float average = _numbers.Sum() / _n;
             return average.ToString();
         }
 
-        public string getAddition()
+        internal string getAddition()
         {
             return _numbers.Sum().ToString();
         }
 
-        public string getDescending()
+        internal string getDescending()
         {
 
             var descendingList = _numbers.OrderByDescending(x => x).ToList();
@@ -59,7 +59,7 @@ namespace OperacionesNumerosAleatorios
         }
 
 
-        public string getAscending()
+        internal string getAscending()
         {
 
             var ascendingList = _numbers.OrderBy(x => x).ToList();
